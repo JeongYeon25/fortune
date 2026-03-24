@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>운세 입력</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle at top, #1a1a2e, #000000);
+  overflow: hidden;
+  font-family: 'Orbitron', sans-serif;
+  color: white;
+}
+
+.stars {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.stars::after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  box-shadow:
+    50px 100px white,
+    150px 200px white,
+    300px 50px white,
+    500px 300px white,
+    700px 150px white,
+    900px 400px white,
+    1200px 200px white,
+    1400px 100px white,
+    1600px 350px white,
+    1800px 250px white;
+  animation: twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle {
+  from { opacity: 0.3; }
+  to { opacity: 1; }
+}
+
+.container {
+  text-align: center;
+  z-index: 1;
+}
+
+h1 {
+  font-size: 2.8rem;
+  margin-bottom: 20px;
+  text-shadow: 0 0 20px #6a5acd;
+}
+
+input {
+  padding: 12px;
+  border-radius: 15px;
+  border: none;
+  width: 220px;
+  text-align: center;
+  font-size: 16px;
+}
+
+button {
+  margin-top: 25px;
+  padding: 12px 30px;
+  font-size: 16px;
+  border: none;
+  border-radius: 30px;
+  background: linear-gradient(45deg, #6a5acd, #00c3ff);
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px #00c3ff;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="stars"></div>
+
+<div class="container">
+  <h1>🔮 이름을 입력하세요</h1>
+
+  <input type="text" id="name" placeholder="이름 입력">
+  <br>
+  <button onclick="goResult()">운세 확인</button>
+</div>
+
+<script>
+function goResult() {
+  const name = document.getElementById("name").value;
+
+  if(name === "") {
+    alert("이름을 입력해주세요!");
+    return;
+  }
+
+  // 이름을 URL로 전달
+  location.href = "result.html?name=" + encodeURIComponent(name);
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>찬란 운세소</title>
+
+<!-- 폰트 -->
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle at top, #1a1a2e, #000000);
+  overflow: hidden;
+  font-family: 'Orbitron', sans-serif;
+  color: white;
+}
+
+/* 별 배경 */
+.stars {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.stars::after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  box-shadow:
+    50px 100px white,
+    150px 200px white,
+    300px 50px white,
+    500px 300px white,
+    700px 150px white,
+    900px 400px white,
+    1200px 200px white,
+    1400px 100px white,
+    1600px 350px white,
+    1800px 250px white;
+  animation: twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle {
+  from { opacity: 0.3; }
+  to { opacity: 1; }
+}
+
+.container {
+  text-align: center;
+  z-index: 1;
+}
+
+h1 {
+  font-size: 3.5rem;
+  margin-bottom: 10px;
+  text-shadow: 0 0 20px #6a5acd;
+}
+
+p {
+  font-size: 1.2rem;
+  opacity: 0.8;
+}
+
+button {
+  margin-top: 40px;
+  padding: 15px 35px;
+  font-size: 18px;
+  border: none;
+  border-radius: 30px;
+  background: linear-gradient(45deg, #6a5acd, #00c3ff);
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px #00c3ff;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="stars"></div>
+
+<div class="container">
+  <h1>🌌 찬란 운세소</h1>
+  <p>우주가 알려주는 당신의 찬란한 순간 ✨</p>
+
+  <button onclick="location.href='fortune.html'">
+    운세 보러 가기
+  </button>
+</div>
+
+</body>
+</html>
