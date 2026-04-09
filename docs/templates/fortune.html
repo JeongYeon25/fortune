@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>찬란운세소</title>
+<style>
+body {
+    margin:0;
+    height:100vh;
+    background:black;
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:30px;  /* ⭐ 크게 */
+    text-align:center;
+}
+</style>
+
+<script>
+setTimeout(()=>{
+    document.getElementById("f").submit();
+},2000);
+</script>
+
+</head>
+<body>
+
+<div>
+    🌌 우주가 당신의 운명을 분석중...
+</div>
+
+<form id="f" action="/result" method="POST">
+    <input type="hidden" name="name" value="{{name}}">
+</form>
+
+</body>
+</html>
